@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form id="registerForm">
+      <legend>Form đăng nhập</legend>
+
+      <div class="input-group">
+        <span class="input-icon">👤</span>
+        <input type="text" id="fullname" name="fullname" placeholder="Họ tên" />
+      </div>
+
+      <div class="input-group">
+        <span class="input-icon">🔒</span>
+        <input type="password" id="password" name="password" placeholder="Mật khẩu" />
+      </div>
+      
+      <div class="input-group">
+        <span class="input-icon">✉️</span>
+        <input type="email" id="email" name="email" placeholder="Địa chỉ email" />
+      </div>
+
+      <label for="cities">Thành phố</label>
+      <select id="cities" name="cities">
+        <option value="" disabled selected>Chọn thành phố</option>
+        <option value="HaNoi">Hà Nội</option>
+        <option value="VinhPhuc">Vĩnh Phúc</option>
+        <option value="HaiDuong">Hải Dương</option>
+        <option value="HaiPhong">Hải Phòng</option>
+        <option value="HaTinh">Hà Tĩnh</option>
+      </select>
+
+      <div class="input-group">
+        <label for="note" class="sr-only">Ghi chú</label>
+        <textarea id="note" name="note" rows="4" placeholder="Ghi chú..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">ĐĂNG NHẬP</button>
+    </form>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+          const fullname = document.getElementById("fullname").value.trim();
+          const password = document.getElementById("password").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const city = document.getElementById("cities").value;
+          const note = document.getElementById("note").value.trim();
+
+          if (!fullname) { alert("Vui lòng nhập họ tên"); return; }
+          if (!password) { alert("Vui lòng nhập mật khẩu"); return; }
+          if (!email) { alert("Vui lòng nhập email"); return; }
+
+          console.log("Họ tên:", fullname);
+          console.log("Mật khẩu:", password);
+          console.log("Email:", email);
+          console.log("Thành phố:", city);
+          console.log("Ghi chú:", note);
+        });
+      </script>
+
+</body>
+</html>

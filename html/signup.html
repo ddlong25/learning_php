@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Đăng ký</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], input[type="password"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #999;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+
+        .error {
+            color: #d9534f;
+            font-size: 0.9em;
+            margin-top: 6px;
+            min-height: 1.1em;
+        }
+        .success {
+            color: #28a745;
+            text-align: center;
+            margin-top: 10px;
+            min-height: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="signupForm" novalidate>
+        <h2>Đăng ký</h2>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Nhập username">
+        <small id="usernameError" class="error" aria-live="polite"></small>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Nhập password">
+        <small id="passwordError" class="error" aria-live="polite"></small>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Nhập email">
+        <small id="emailError" class="error" aria-live="polite"></small>
+
+        <label for="thanhpho">Thành phố:</label>
+        <select id="thanhpho" name="thanhpho">
+            <option value="">-- Chọn Thành phố --</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Hải Phòng">Hải Phòng</option>
+            <option value="Cần Thơ">Cần Thơ</option>
+        </select>
+        <small id="thanhphoError" class="error" aria-live="polite"></small>
+
+        <label for="ghichu">Ghi chú:</label>
+        <textarea id="ghichu" name="ghichu" rows="4" placeholder="Nhập ghi chú"></textarea>
+
+        <button type="button" id="btnSignup">Đăng ký</button>
+        <div id="successMessage" class="success" aria-live="polite"></div>
+    </form>
+
+    <!-- Gắn file JS -->
+    <script src="signup.js"></script>
+</body>
+</html>
